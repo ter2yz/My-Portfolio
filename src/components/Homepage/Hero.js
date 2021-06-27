@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { Link } from "react-scroll";
+
 import Header from '../Header'
 import WalkingPeopleImage from '../../images/walking-people-white-outline.svg'
 import DividerStraight from '../../images/divider-straight.svg'
@@ -52,7 +54,14 @@ export default function Hero() {
                         <p className="leading-loose text-black-text text-center lg:text-left mb-6">
                             With 6 years of experience, I leverage systemic design thinking to solve real-world problems by creating cohesive end-to -end user experiences and focusing on digital transformation. I am keen to deliver a meaningful design for social good and make the world a better place.
                         </p>
-                        <Button>Discover more</Button>
+                        <Link
+                            to="aboutMe"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            <Button>Discover more</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

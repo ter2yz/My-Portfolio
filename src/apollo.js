@@ -10,7 +10,7 @@ import { onError } from "@apollo/client/link/error";
 const httpLink = new HttpLink({
     uri: "https://graphql.contentful.com/content/v1/spaces/jszixocm2sp2/",
     headers: {
-        Authorization: `Bearer FhNUawWtEWVT16wKyfwbUZsC1yrQ4lZz4yswJDcCIRg`,
+        Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_API}`,
     }
 });
 

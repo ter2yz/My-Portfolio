@@ -22,15 +22,17 @@ export default function Home() {
         <div>
             <HeroSection />
             <AboutMeSection />
-            {
-                projectsData && projectsData.map((project, index) =>
-                    <FeatureProjectBlock
-                        key={project.sys.id}
-                        project={project}
-                        isOdd={index % 2 === 0}
-                    />
-                )
-            }
+            <div id="projectList" className="w-full">
+                {
+                    projectsData && projectsData.map((project, index) =>
+                        <FeatureProjectBlock
+                            key={project.sys.id}
+                            project={project}
+                            isOdd={index % 2 === 0}
+                        />
+                    )
+                }
+            </div>
         </div>
     )
 }

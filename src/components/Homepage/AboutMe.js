@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from "react-scroll";
+
 import SunGlassesImage from '../../images/sun-glasses.svg'
 import DividerCurve from '../../images/divider-curve.svg'
 import Button from '../Button'
 
 export default function AboutMe() {
     return (
-        <div className="w-full lg:h-screen bg-gray-100 flex justify-center items-center">
+        <div id="aboutMe" className="w-full lg:h-screen bg-gray-100 flex justify-center items-center">
             <div className="container">
                 <div className="w-full py-10 lg:py-0 flex flex-col items-center">
                     <img className="w-24 mb-2" src={SunGlassesImage} alt="Sun Glasses" />
@@ -21,7 +23,14 @@ export default function AboutMe() {
                             With 6 years of experience, I leverage systemic design thinking to solve real-world problems by creating cohesive end-to -end user experiences and focusing on digital transformation. I am keen to deliver a meaningful design for social good and make the world a better place.
                         </p>
                     </div>
-                    <Button className="mt-8">View my showcase</Button>
+                    <Link
+                        to="projectList"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                    >
+                        <Button className="mt-8">View my showcase</Button>
+                    </Link>
                 </div>
             </div>
         </div>

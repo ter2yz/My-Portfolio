@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { useQuery } from "@apollo/client";
-import { motion } from 'framer-motion'
 
 import { GET_ENTRY_BY_SLUG } from '../components/GraphQL/Queries'
 import Hero from '../components/SingleProjectPage/Hero'
@@ -11,8 +10,6 @@ import Showcase from '../components/SingleProjectPage/Showcase';
 import TextBlock from '../components/SingleProjectPage/TextBlock';
 import BackButton from '../components/BackButton';
 import TransitionCanvas from '../components/TransitionCanvas';
-
-const transition = { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] }
 
 export default function SingleProject() {
     let { slug } = useParams()

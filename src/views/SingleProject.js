@@ -9,7 +9,7 @@ import Overview from '../components/SingleProjectPage/Overview';
 import Showcase from '../components/SingleProjectPage/Showcase';
 import TextBlock from '../components/SingleProjectPage/TextBlock';
 import BackButton from '../components/BackButton';
-import TransitionCanvas from '../components/TransitionCanvas';
+import TransitionCanvas, { transition } from '../components/TransitionCanvas';
 
 export default function SingleProject() {
     let { slug } = useParams()
@@ -29,7 +29,15 @@ export default function SingleProject() {
 
     if (isLoading) {
         return (
-            <></>
+            <div
+                className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"
+                initial={{ x: 0 }}
+                animate={{ x: '-100%' }}
+                exit={{ x: 0 }}
+                transition={transition}
+            >
+
+            </div>
         )
     } else {
         return (

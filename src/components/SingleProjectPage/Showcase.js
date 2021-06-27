@@ -4,7 +4,7 @@ import React from 'react'
 export default function Showcase({ showcaseImage }) {
     return (
         <div
-            className="w-full h-auto lg:h-screen bg-fixed bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${showcaseImage.url})` }}
+            className="w-full h-auto lg:h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${showcaseImage.url})` }}
         >
             {/* <BackgroundImage
                 src={showcaseImage.url}

@@ -12,9 +12,10 @@ export default function Overview({ data }) {
                         <h2 className="font-inter text-black-text text-center text-5xl font-black mb-6">
                             Overview
                         </h2>
-                        <p className="leading-loose text-black-text font-light text-center lg:text-left mb-6 lg:mb-0">
-                            {overview}
-                        </p>
+                        <p
+                            className="leading-loose text-black-text font-light text-center lg:text-left mb-6 lg:mb-0"
+                            dangerouslySetInnerHTML={{ __html: overview }}
+                        />
                     </div>
                     <div className="w-full lg:w-5/12 px-8 lg:px-0 max-w-screen-md flex flex-col">
                         <span className="w-full h-0.5 bg-black-primary"></span>

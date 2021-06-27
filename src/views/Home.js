@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client"
 
 import HeroSection from '../components/Homepage/Hero'
 import AboutMeSection from '../components/Homepage/AboutMe'
 import { GET_FEATURE_PROJECTS } from '../components/GraphQL/Queries'
-import FeatureProjectBlock from '../components/Homepage/FeatureProjectBlock';
+import FeatureProjectBlock from '../components/Homepage/FeatureProjectBlock'
+import TransitionCanvas from '../components/TransitionCanvas'
 
 export default function Home() {
 
@@ -20,6 +21,7 @@ export default function Home() {
 
     return (
         <div>
+            <TransitionCanvas />
             <HeroSection />
             <AboutMeSection />
             <div id="projectList" className="w-full">

@@ -20,7 +20,7 @@ export default function AboutMe() {
                     </div>
                     <div className="w-7/12 mt-8">
                         <p className="text-center leading-loose text-black-text">
-                            With 6 years of experience, I leverage systemic design thinking to solve real-world problems by creating cohesive end-to -end user experiences and focusing on digital transformation. I am keen to deliver a meaningful design for social good and make the world a better place.
+                            I am not only a front end developer, but also a basketball lover who always passing the ball and assisting my team in winning games, an amateur design who always trying to put fantasy into reality, a human who always listening and smiling.
                         </p>
                     </div>
                     <Link

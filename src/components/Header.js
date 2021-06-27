@@ -22,7 +22,7 @@ const Header = React.forwardRef((props, ref) => {
                             <p>Home</p>
                         </button>
                     </Link>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
                             <p>Blogs</p>
                         </button>
@@ -31,7 +31,7 @@ const Header = React.forwardRef((props, ref) => {
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
                             <p>Contact Me</p>
                         </button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>

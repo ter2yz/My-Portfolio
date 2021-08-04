@@ -3,7 +3,7 @@ import DividerCurve from '../../images/divider-curve.svg'
 
 export default function TextBlock({ data, isLast }) {
 
-    const { heading, content } = data
+    const { heading, contentParagraph } = data
 
     return (
         <div className={`w-full flex justify-center ${!isLast ? 'mb-10 lg:mb-16' : 'mb-0'}`}>
@@ -14,7 +14,7 @@ export default function TextBlock({ data, isLast }) {
                             {heading}
                         </h2>
                         <img className="w-40 mb-10" src={DividerCurve} alt="" />
-                        {content && content.map(singleContent =>
+                        {contentParagraph && contentParagraph.map(singleContent =>
                             <p className="leading-loose text-black-text font-light text-center lg:text-left mb-4">
                                 {singleContent}
                             </p>

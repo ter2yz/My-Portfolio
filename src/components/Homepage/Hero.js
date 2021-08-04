@@ -75,7 +75,7 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 0.3 }}
                         >
-                            With more than 4 years of experience, I have a very good sense of user experience and experienced coding skills always help me provide the best products and deliver great value.
+                            With more than 4 years of experience, I have a very good sense of user experience and my experienced coding skills always help me provide the best products and deliver great value.
                         </motion.p>
                         <Link
                             to="aboutMe"

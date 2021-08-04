@@ -5,7 +5,7 @@ import DividerDark from '../../images/divider-straight.svg'
 import DividerLight from '../../images/divider-straight-white.svg'
 
 export default function FeatureProjectBlock({ project, isOdd }) {
-    const { titleHtml, handle, logo, description, featureImage } = project;
+    const { titleHtml, slug, logo, description, featureImage } = project;
 
     return (
         <div className={`w-full lg:h-screen bg-${isOdd ? 'black-primary' : 'white'} flex justify-center items-center`}>
@@ -20,15 +20,19 @@ export default function FeatureProjectBlock({ project, isOdd }) {
                         <p className={`leading-loose text-${isOdd ? 'white' : 'black-text'} text-center lg:text-left mb-6`}>
                             {description}
                         </p>
-                        <Link to={`/project/${handle}`}>
+                        <Link to={`/project/${slug}`}>
                             <Button className="" isDark={!isOdd}>View my showcase</Button>
                         </Link>
                     </div>
                     <div className="w-full lg:w-6/12 p-4 lg:p-0">
                         <div className="relative w-full rounded-lg overflow-hidden shadow-lg">
-                            <img className="w-full lg:max-h-96 object-cover object-center" src={featureImage.url} alt="" />
+                            {
+                                featureImage && <img className="w-full lg:max-h-96 object-cover object-center" src={featureImage.url} alt="" />
+                            }
                             <div className="absolute w-full h-full inset-0 flex justify-center items-center">
-                                <img src={logo.url} alt="" className="absolute max-w-xs max-h-28 motion-safe:animate-bounce-light" />
+                                {
+                                    logo && <img src={logo.url} alt="" className="absolute max-w-xs max-h-28 motion-safe:animate-bounce-light" />
+                                }
                             </div>
                         </div>
                     </div>

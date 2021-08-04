@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { useQuery } from "@apollo/client";
-
-import { GET_ENTRY_BY_SLUG } from '../components/GraphQL/Queries'
 import Hero from '../components/SingleProjectPage/Hero'
 import Mockup from '../components/SingleProjectPage/Mockup';
 import Overview from '../components/SingleProjectPage/Overview';
 import Showcase from '../components/SingleProjectPage/Showcase';
 import TextBlock from '../components/SingleProjectPage/TextBlock';
 import BackButton from '../components/BackButton';
+import { SA_GET_PROJECT_BY_SLUG } from '../components/Sanity/Queries'
 import TransitionCanvas, { transition } from '../components/TransitionCanvas';
 
 export default function SingleProject() {
     let { slug } = useParams()
 
-    const { data } = useQuery(GET_ENTRY_BY_SLUG(slug));
     const [entryData, setEntryData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
 
+    useEffect(() => {
+        if (slug) {
+            SA_GET_PROJECT_BY_SLUG(slug)
+                .then((data) => setEntryData(data[0].content))
+                .catch(console.error)
+        }
+    }, [slug])
 
     useEffect(() => {
-        if (data) {
-            setEntryData(data.projectsCollection.items[0])
+        if (entryData) {
             setIsLoading(false)
         }
-    }, [data])
+    }, [entryData])
 
 
     if (isLoading) {
@@ -55,17 +58,17 @@ export default function SingleProject() {
                     mockupImage={entryData.mockupImage}
                 />
                 <Overview
-                    data={{ overview: entryData.contentData.overview, overviewInfo: entryData.contentData.overviewInfo }}
+                    data={{ overview: entryData.overview, overviewInfo: entryData.overviewInfo }}
                 />
                 <Showcase
-                    showcaseImage={entryData.perspectiveShowcaseImage}
+                    showcaseImage={entryData.showcaseImage}
                 />
                 <div className="w-full py-20">
                     {
-                        entryData.contentData.contentBlock && entryData.contentData.contentBlock.map((singleContent, index) =>
+                        entryData.contentBlock && entryData.contentBlock.map((singleContent, index) =>
                             <TextBlock
                                 data={singleContent}
-                                isLast={entryData.contentData.contentBlock[index + 1] ? false : true}
+                                isLast={entryData.contentBlock[index + 1] ? false : true}
                             />
                         )
                     }

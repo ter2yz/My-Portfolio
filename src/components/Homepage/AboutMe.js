@@ -20,7 +20,7 @@ export default function AboutMe() {
                     </div>
                     <div className="w-7/12 mt-8">
                         <p className="text-center leading-loose text-black-text">
-                            I am not only a front end developer, but also a basketball lover who always passing the ball and assisting my team in winning games, an amateur design who always trying to put fantasy into reality, a human who always listening and smiling.
+                            I am not only a front end developer, but also a basketball lover who is always passing the ball and assisting my team in winning games, an amateur design who is always trying to bring fantasy into reality, a human who always is listening and smiling.
                         </p>
                     </div>
                     <Link

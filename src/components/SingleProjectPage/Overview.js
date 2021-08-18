@@ -1,4 +1,5 @@
 import React from 'react'
+import ToolLogoHandler from '../../lib/toolLogo'
 
 export default function Overview({ data }) {
 
@@ -23,7 +24,12 @@ export default function Overview({ data }) {
                             overviewInfo && overviewInfo.map((item, index) =>
                                 <div className={`w-full flex flex-col py-5 ${overviewInfo[index + 1] ? 'border-b' : ''} border-opacity-20 border-black-primary`}>
                                     <p className="text-xs font-light uppercase mb-1">{item.heading}</p>
-                                    <p className="font-semibold">{item.content}</p>
+                                    {
+                                        item?.content && <p className="font-semibold">{item.content}</p>
+                                    }
+                                    {
+                                        item?.tools && <div className="font-semibold flex">{item.tools.map(tool => ToolLogoHandler(tool))}</div>
+                                    }
                                 </div>
                             )
                         }

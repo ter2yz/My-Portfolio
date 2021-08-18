@@ -17,7 +17,7 @@ export default function Showcase({ showcaseImage }) {
     const handleScroll = () => {
         let scrollY = window.scrollY
         let offset = (scrollY + height) - initPosition
-        let percentage = ((offset / (containerHeight + height)) * 50) + 20
+        let percentage = ((offset / (containerHeight + height)) * 80) + 20
         setParallaxPercent(percentage)
     }
 

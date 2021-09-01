@@ -60,7 +60,7 @@ export default function Showcase({ showcaseImage }) {
                     className="w-full h-full lg:bg-fixed bg-cover bg-no-repeat"
                     style={{ background: `url(${showcaseImage.url}) 0% ${parallaxPercent}%` }}
                 >
-                    <div className="py-80 lg:py-0"></div>
+                    <div className="py-80 lg:py-0"> </div>
                 </div>
             </div>
         </div>

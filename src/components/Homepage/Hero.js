@@ -34,7 +34,7 @@ export default function Hero() {
 
     return (
         <div
-            className={`relative w-full lg:h-screen flex flex-col transition duration-500 z-30`}
+            className="relative w-full lg:h-screen flex flex-col transition duration-500 z-30"
         >
             <Header
                 ref={headerRef}
@@ -53,7 +53,7 @@ export default function Hero() {
                     />
                 </div>
                 <div className="container flex">
-                    <div className={`w-full px-4 lg:px-0 py-10 lg:py-0 lg:w-6/12 lg:h-full flex flex-col items-center lg:items-start justify-center`}>
+                    <div className="w-full px-4 lg:px-0 py-10 lg:py-0 lg:w-6/12 lg:h-full flex flex-col items-center lg:items-start justify-center">
                         <motion.h1
                             className="font-inter mb-4 text-center lg:text-left text-black-text"
                             initial={{ opacity: 0, y: 16 }}

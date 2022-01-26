@@ -20,7 +20,7 @@ export default function Hero() {
 
     useEffect(() => {
         if (headerRef) {
-            setHeaderHeight(headerRef.current.offsetHeight)
+            setHeaderHeight(headerRef?.current?.offsetHeight)
         }
     }, [])
 

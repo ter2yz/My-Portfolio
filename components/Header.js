@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from "next/link";
-import SiteLogo from '../public/images/site-logo.svg'
 
 const Header = React.forwardRef((props, ref) => {
 
@@ -14,13 +13,13 @@ const Header = React.forwardRef((props, ref) => {
         >
             <div className={`container flex justify-center md:justify-start items-center transition-all ${isFixed ? 'py-2' : 'py-5'}`}>
                 <div className={`${isFixed ? 'w-16' : 'w-20'} rounded-lg transition-all`}>
-                    <img className={`w-full h-auto`} src={SiteLogo} alt="" />
+                    <img className={`w-full h-auto`} src="/images/site-logo.svg" alt="" />
                 </div>
                 <div className="hidden md:flex ml-20 justify-center items-center">
                     <Link href="/">
-                        <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
+                        <a className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-150`}>
                             <p>Home</p>
-                        </button>
+                        </a>
                     </Link>
                     {/* <Link href="/">
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>

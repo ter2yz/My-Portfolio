@@ -3,8 +3,6 @@ import { Link } from "react-scroll";
 import { motion } from 'framer-motion'
 
 import Header from '../Header'
-import WalkingPeopleImage from '../../images/walking-people-white-outline.svg'
-import DividerStraight from '../../images/divider-straight.svg'
 import Button from '../Button'
 
 export default function Hero() {
@@ -22,7 +20,7 @@ export default function Hero() {
 
     useEffect(() => {
         if (headerRef) {
-            setHeaderHeight(headerRef.current.offsetHeight)
+            setHeaderHeight(headerRef?.current?.offsetHeight)
         }
     }, [])
 
@@ -46,7 +44,7 @@ export default function Hero() {
             <div className={`relative lg:absolute w-full lg:h-screen inset-0 flex justify-center z-10`}>
                 <div className="absolute hidden lg:flex top-0 right-0 w-5/12 lg:h-full bg-black-primary justify-center items-center">
                     <motion.img
-                        className="w-8/12" src={WalkingPeopleImage} alt=""
+                        className="w-8/12" src="/images/walking-people-white-outline.svg" alt=""
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.3 }}
@@ -64,7 +62,7 @@ export default function Hero() {
                             <span className="block text-6xl font-black">Front End Developer</span>
                         </motion.h1>
                         <motion.img
-                            className="w-40 mb-6" src={DividerStraight} alt=""
+                            className="w-40 mb-6" src="/images/divider-straight.svg" alt=""
                             initial={{ opacity: 0, x: -16 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4, duration: 0.2 }}

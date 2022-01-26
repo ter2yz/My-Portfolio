@@ -12,10 +12,10 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // SA_GET_FEATURE_PROJECTS
-        //     .then((data) => setProjectsData(data))
-        //     .then(() => setIsLoading(false))
-        //     .catch(console.error);
+        SA_GET_FEATURE_PROJECTS
+            .then((data) => setProjectsData(data))
+            .then(() => setIsLoading(false))
+            .catch(console.error);
         setIsLoading(false);
     }, [])
 

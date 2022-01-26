@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-import SiteLogo from '../images/site-logo.svg'
+import Link from "next/link";
+import SiteLogo from '../public/images/site-logo.svg'
 
 const Header = React.forwardRef((props, ref) => {
 
@@ -17,17 +17,17 @@ const Header = React.forwardRef((props, ref) => {
                     <img className={`w-full h-auto`} src={SiteLogo} alt="" />
                 </div>
                 <div className="hidden md:flex ml-20 justify-center items-center">
-                    <Link to="/">
+                    <Link href="/">
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
                             <p>Home</p>
                         </button>
                     </Link>
-                    {/* <Link to="/">
+                    {/* <Link href="/">
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
                             <p>Blogs</p>
                         </button>
                     </Link>
-                    <Link to="/">
+                    <Link href="/">
                         <button className={`text-gray-100 md:text-gray-800 font-normal hover:font-bold text-sm uppercase mr-4 transition-all duration-300`}>
                             <p>Contact Me</p>
                         </button>

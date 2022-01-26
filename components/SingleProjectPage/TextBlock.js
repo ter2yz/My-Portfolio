@@ -1,5 +1,4 @@
 import React from 'react'
-import DividerCurve from '../../images/divider-curve.svg'
 
 export default function TextBlock({ data, isLast }) {
 
@@ -13,7 +12,7 @@ export default function TextBlock({ data, isLast }) {
                         <h2 className="font-inter text-black-text text-center text-5xl font-black mb-4 capitalize">
                             {heading}
                         </h2>
-                        <img className="w-40 mb-10" src={DividerCurve} alt="" />
+                        <img className="w-40 mb-10" src="/images/divider-curve.svg" alt="" />
                         {contentParagraph && contentParagraph.map(singleContent =>
                             <p className="leading-loose text-black-text font-light text-center lg:text-left mb-4">
                                 {singleContent}

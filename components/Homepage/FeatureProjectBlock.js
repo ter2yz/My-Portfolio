@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import Button from '../Button'
-import DividerDark from '../../images/divider-straight.svg'
-import DividerLight from '../../images/divider-straight-white.svg'
+import DividerDark from '../../public/images/divider-straight.svg'
+import DividerLight from '../../public/images/divider-straight-white.svg'
 
 export default function FeatureProjectBlock({ project, isOdd }) {
     const { titleHtml, slug, logo, description, featureImage } = project;
@@ -20,8 +20,8 @@ export default function FeatureProjectBlock({ project, isOdd }) {
                         <p className={`leading-loose text-${isOdd ? 'white' : 'black-text'} text-center lg:text-left mb-6`}>
                             {description}
                         </p>
-                        <Link to={`/project/${slug}`}>
-                            <Button className="" isDark={!isOdd}>View my showcase</Button>
+                        <Link href={`/project/${slug}`}>
+                            <a className="" isDark={!isOdd}>View my showcase</a>
                         </Link>
                     </div>
                     <div className="w-full lg:w-6/12 p-4 lg:p-0">

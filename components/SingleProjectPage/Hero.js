@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import DividerLight from '../../images/divider-straight-white.svg'
-
 export default function Hero({ titleHtml, description, featureImage, logo }) {
     return (
         <div
@@ -18,7 +16,7 @@ export default function Hero({ titleHtml, description, featureImage, logo }) {
                         transition={{ delay: 1.2, duration: 0.5 }}
                     />
                     <motion.img
-                        className="w-24 mb-6" src={DividerLight} alt=""
+                        className="w-24 mb-6" src="/images/divider-straight-white.svg" alt=""
                         initial={{ opacity: 0, x: -16 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.7, duration: 0.5 }}

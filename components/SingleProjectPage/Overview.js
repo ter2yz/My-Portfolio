@@ -1,9 +1,8 @@
-import React from 'react'
-import ToolLogoHandler from '../../lib/toolLogo'
+import React from "react";
+import ToolLogoHandler from "../../lib/toolLogo";
 
 export default function Overview({ data }) {
-
-    const { overview, overviewInfo } = data
+    const { overview, overviewInfo } = data;
 
     return (
         <div className="w-full flex justify-center">
@@ -20,22 +19,46 @@ export default function Overview({ data }) {
                     </div>
                     <div className="w-full lg:w-5/12 px-8 lg:px-0 max-w-screen-md flex flex-col">
                         <span className="w-full h-0.5 bg-black-primary"></span>
-                        {
-                            overviewInfo && overviewInfo.map((item, index) =>
-                                <div className={`w-full flex flex-col py-5 ${overviewInfo[index + 1] ? 'border-b' : ''} border-opacity-20 border-black-primary`}>
-                                    <p className="text-xs font-light uppercase mb-1">{item.heading}</p>
-                                    {
-                                        item?.content && <p className="font-semibold">{item.content}</p>
-                                    }
-                                    {
-                                        item?.tools && <div className="font-semibold flex">{item.tools.map(tool => ToolLogoHandler(tool))}</div>
-                                    }
+                        {overviewInfo &&
+                            overviewInfo.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className={`w-full flex flex-col py-5 ${
+                                        overviewInfo[index + 1]
+                                            ? "border-b"
+                                            : ""
+                                    } border-opacity-20 border-black-primary`}
+                                >
+                                    <p className="text-xs font-light uppercase mb-1">
+                                        {item.heading}
+                                    </p>
+                                    {item?.content && (
+                                        <p className="font-semibold">
+                                            {item.content}
+                                        </p>
+                                    )}
+                                    {item?.tools && (
+                                        <div className="font-semibold flex">
+                                            {item.tools.map((tool, index) => (
+                                                <span
+                                                    className="mr-3 mt-1 text-2xl leading-loose"
+                                                    title="hllo wosl"
+                                                    aria-labelledby="ssjwjjs"
+                                                    aria-label="jjskks"
+                                                >
+                                                    {ToolLogoHandler(
+                                                        tool,
+                                                        index
+                                                    )}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
-                            )
-                        }
+                            ))}
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

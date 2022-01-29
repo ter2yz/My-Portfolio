@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export default function Mockup({ mockupImage }) {
-
-    const [imgLoaded, setImgLoaded] = useState(false)
+    const [imgLoaded, setImgLoaded] = useState(false);
 
     return (
         <div className="w-full h-auto lg:h-screen bg-gray-100">
             <div className="w-full h-full flex justify-center items-center overflow-hidden">
                 <div className="relative px-4 py-20 lg:py-0">
                     <img
-                        className={`relative w-full max-w-screen-md max-h-[calc(100vh-4rem)] z-10 transition ${imgLoaded ? 'visible opacity-100' : 'invisible opacity-0'}`}
-                        src={mockupImage.url}
+                        className={`relative w-full max-w-screen-md max-h-[calc(100vh-4rem)] z-10 transition ${
+                            imgLoaded
+                                ? "visible opacity-100"
+                                : "invisible opacity-0"
+                        }`}
+                        src={mockupImage?.url}
                         onLoad={() => setImgLoaded(true)}
                         alt=""
                     />
@@ -20,5 +23,5 @@ export default function Mockup({ mockupImage }) {
                 </div>
             </div>
         </div>
-    )
+    );
 }

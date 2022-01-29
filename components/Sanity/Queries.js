@@ -1,8 +1,6 @@
-import sanityClient from "../Sanity/SanityClient"
+import sanityClient from "../Sanity/SanityClient";
 
-export const SA_GET_FEATURE_PROJECTS =
-    sanityClient
-        .fetch(`
+export const SA_GET_FEATURE_PROJECTS = sanityClient.fetch(`
             *[_type == "project"] | order(priority desc) {
                 "content": tabs {
                     titleHtml,
@@ -16,12 +14,11 @@ export const SA_GET_FEATURE_PROJECTS =
                     }
                 }
             }
-        `)
+        `);
 
 export const SA_GET_PROJECT_BY_SLUG = (slug) =>
-    sanityClient
-        .fetch(`
-            *[_type == "project" && tabs.slug.current == "${slug}"] | order(priority desc) {
+    sanityClient.fetch(`
+            *[_type == "project" && tabs.slug.current == "${slug}"][0] {
                 "content": tabs {
                     title,
                     titleHtml,
@@ -43,6 +40,4 @@ export const SA_GET_PROJECT_BY_SLUG = (slug) =>
                     contentBlock
                 }
             }
-        `)
-
-
+        `);

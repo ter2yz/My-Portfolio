@@ -17,14 +17,11 @@ export default function Home() {
         setIsLoading(false);
     }, []);
 
-    if (isLoading) {
-        return (
-            <div className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"></div>
-        );
-    }
-
     return (
         <div>
+            {isLoading && (
+                <div className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"></div>
+            )}
             <TransitionCanvas />
             <HeroSection />
             <AboutMeSection />

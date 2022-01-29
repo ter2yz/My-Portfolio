@@ -19,7 +19,7 @@ const SingleProject = ({ entry }) => {
     const router = useRouter();
     const { slug } = router.query;
 
-    const [entryData, setEntryData] = useState(entry.content);
+    const entryData = entry?.content;
     const [isLoading, setIsLoading] = useState(true);
 
     console.log("ENTRY data: ", entry);

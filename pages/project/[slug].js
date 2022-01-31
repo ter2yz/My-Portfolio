@@ -22,16 +22,6 @@ const SingleProject = ({ entry }) => {
     const entryData = entry?.content;
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log("ENTRY data: ", entry);
-
-    // useEffect(() => {
-    //     if (slug) {
-    //         SA_GET_PROJECT_BY_SLUG(slug)
-    //             .then((data) => setEntryData(data[0].content))
-    //             .catch(console.error);
-    //     }
-    // }, [slug]);
-
     useEffect(() => {
         if (entryData) {
             setIsLoading(false);

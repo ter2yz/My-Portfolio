@@ -8,9 +8,6 @@ module.exports = {
                 allow: "/",
             },
         ],
-        additionalSitemaps: [
-            `${process.env.SITE_URL}/sitemap.xml`,
-            `${process.env.SITE_URL}/server-sitemap.xml`,
-        ],
+        additionalSitemaps: [`${process.env.SITE_URL}/server-sitemap.xml`],
     },
 };

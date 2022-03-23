@@ -63,10 +63,10 @@ export default function Hero() {
                             transition={{ delay: 0.6, duration: 0.3 }}
                         >
                             <span className="text-4xl font-black">
-                                I&apos;m a
+                                I&apos;m a&nbsp;
                             </span>
                             <span className="block text-6xl font-black">
-                                Front End Developer
+                                Front-End Developer
                             </span>
                         </motion.h1>
                         <motion.img
@@ -83,10 +83,11 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 0.3 }}
                         >
-                            With more than 4 years of experience, I have a very
-                            good sense of user experience and my experienced
-                            coding skills always help me provide the best
-                            products and deliver great value.
+                            I enjoy bridging the gap between business and tech,
+                            linking beautiful design with functionality as well
+                            as bringing innovative ideas to life. Strong
+                            Front-End Web development skills with a keen focus
+                            on user experience and interaction.
                         </motion.p>
                         <Link
                             to="aboutMe"

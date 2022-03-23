@@ -4,9 +4,11 @@ import clsx from "clsx";
 import Button, { LinkButton } from "../Button";
 import DividerDark from "../../public/images/divider-straight.svg";
 import DividerLight from "../../public/images/divider-straight-white.svg";
+import { useGlobalStatus } from "../../lib/contexts/GlobalContext";
 
 export default function FeatureProjectBlock({ project, isOdd }) {
     const { titleHtml, slug, logo, description, featureImage } = project;
+    const { handleIsLandingPage } = useGlobalStatus();
 
     return (
         <div
@@ -44,8 +46,11 @@ export default function FeatureProjectBlock({ project, isOdd }) {
                             {description}
                         </p>
                         <Link href={`/project/${slug}`} passHref>
-                            <LinkButton isDark={!isOdd}>
-                                View my showcase
+                            <LinkButton
+                                isDark={!isOdd}
+                                handleClick={() => handleIsLandingPage(true)}
+                            >
+                                More about the project
                             </LinkButton>
                         </Link>
                     </div>

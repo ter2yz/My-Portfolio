@@ -41,7 +41,7 @@ export default function Overview({ data }) {
                                         <div className="font-semibold flex">
                                             {item.tools.map((tool, index) => (
                                                 <span
-                                                    className="mr-3 mt-1 text-2xl leading-loose"
+                                                    className="mr-3 mt-1 text-2xl leading-loose w-[22.5px] h-[22.5px]"
                                                     title="hllo wosl"
                                                     aria-labelledby="ssjwjjs"
                                                     aria-label="jjskks"

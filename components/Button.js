@@ -13,7 +13,7 @@ export default function Button({ children, isDark = true, className = "" }) {
     );
 }
 
-const ALink = ({ children, isDark = true, className, href }) => {
+const ALink = ({ children, isDark = true, className, href, handleClick }) => {
     return (
         <a
             className={clsx(
@@ -25,6 +25,9 @@ const ALink = ({ children, isDark = true, className, href }) => {
                 }
             )}
             href={href}
+            onClick={(e) => {
+                handleClick();
+            }}
         >
             {children}
         </a>

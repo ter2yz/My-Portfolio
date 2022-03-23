@@ -33,7 +33,7 @@ export default function Showcase({ showcaseImage }) {
 
     useEffect(() => {
         if (showcaseDivRef.current) {
-            setInitPosition(showcaseDivRef.current.getBoundingClientRect().top);
+            setInitPosition(showcaseDivRef.current.offsetTop);
             setContainerHeight(
                 showcaseDivRef.current.getBoundingClientRect().height
             );
@@ -43,22 +43,12 @@ export default function Showcase({ showcaseImage }) {
     return (
         <div ref={showcaseDivRef}>
             <div ref={ref} className="w-full h-auto lg:h-screen">
-                {/* <BackgroundImage
-                    src={showcaseImage.url}
-                    width="100%"
-                    height="100%"
-                    lazyLoad
-                    className="lg:bg-fixed bg-cover bg-center bg-no-repeat"
-                    style={{ backgroudPosition: `${parallaxPercent}%` }}
-                >
-                    <div className="py-80 lg:py-0">
-                        <p className="text-white font-bold bg-black-primary">{`Header inside viewport ${inView}.`}</p>
-                    </div>
-                </BackgroundImage> */}
                 <div
-                    className="w-full h-full lg:bg-fixed bg-cover bg-no-repeat"
+                    className="w-full h-full lg:bg-fixed bg-no-repeat"
                     style={{
-                        background: `url(${showcaseImage?.url}) 0% ${parallaxPercent}%`,
+                        backgroundImage: `url(${showcaseImage?.url})`,
+                        backgroundPositionX: "0%",
+                        backgroundPositionY: `${parallaxPercent}%`,
                     }}
                 >
                     <div className="py-80 lg:py-0"> </div>

@@ -25,7 +25,7 @@ const ALink = ({ children, isDark = true, className, href, handleClick }) => {
                 }
             )}
             href={href}
-            onClick={(e) => {
+            onClick={() => {
                 handleClick();
             }}
         >

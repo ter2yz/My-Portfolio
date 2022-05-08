@@ -10,8 +10,8 @@ const Header = React.forwardRef((props, ref) => {
             ref={ref}
             className={`w-full flex flex-shrink-0 justify-center items-center transition-all z-40 top-0 border border-b-[1px] ${
                 isFixed
-                    ? "bg-white fixed border-zinc-200 shadow-lg"
-                    : "bg-white/0 sticky border-transparent"
+                    ? "bg-white fixed border-zinc-200 shadow-lg h-16"
+                    : "bg-white/0 sticky border-transparent h-24"
             }`}
         >
             <div

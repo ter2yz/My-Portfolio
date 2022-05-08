@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import Button from "../Button";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
     return (
@@ -9,7 +10,13 @@ export default function AboutMe() {
             className="w-full lg:h-screen bg-gray-100 flex justify-center items-center"
         >
             <div className="container">
-                <div className="w-full py-10 lg:py-0 flex flex-col items-center">
+                <motion.div
+                    className="w-full py-10 lg:py-0 flex flex-col items-center"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
                     <img
                         className="w-24 mb-2"
                         src="/images/sun-glasses.svg"
@@ -45,7 +52,7 @@ export default function AboutMe() {
                     >
                         <Button className="mt-8">View my showcase</Button>
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

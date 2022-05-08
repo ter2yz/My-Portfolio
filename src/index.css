@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 @layer utilities {
-  .animation-delay-200 {
-    animation-delay: 2s;
-  }
-  .animation-delay-400 {
-    animation-delay: 4s;
-  }
-  .bg-black-glass {
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-  }
+    .animation-delay-200 {
+        animation-delay: 2s;
+    }
+    .animation-delay-400 {
+        animation-delay: 4s;
+    }
+    .bg-black-glass {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
 }
 
 body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

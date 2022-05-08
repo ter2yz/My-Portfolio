@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import HeroSection from "../components/Homepage/Hero";
 import AboutMeSection from "../components/Homepage/AboutMe";
+import ShowcaseSectionDesktop from "../components/Homepage/ShowcaseSectionDesktop";
 import FeatureProjectBlock from "../components/Homepage/FeatureProjectBlock";
 import TransitionCanvas from "../components/TransitionCanvas";
 import { SA_GET_FEATURE_PROJECTS } from "../components/Sanity/Queries";
@@ -117,9 +118,9 @@ export default function Home() {
                 {xValue.current} / {percentageBg * 100}%
             </div>
             <div className="relative">
-                {isLoading && (
+                {/* {isLoading && (
                     <div className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"></div>
-                )}
+                )} */}
                 <div
                     className={clsx(
                         "h-screen fixed z-40 inset-0 bg-black-primary transition-all duration-200",
@@ -132,33 +133,12 @@ export default function Home() {
                 <div ref={aboutSectionRef}>
                     <AboutMeSection />
                 </div>
-                <div
-                    id="projectList"
-                    className="relative w-full h-[200vw]"
-                    ref={projectListSectionRef}
-                >
-                    <div
-                        className="sticky top-16 flex justify-between items-center pt-8 pb-8 h-screen w-[200vw] will-change-transform"
-                        style={{
-                            transformStyle: "preserve-3d",
-                            transform: `translate3d(${xPosition}px, 0px, 0px)`,
-                        }}
-                    >
-                        {projectsData &&
-                            projectsData.map((project, index) => (
-                                <div
-                                    key={project.content.slug}
-                                    className="w-full"
-                                >
-                                    <FeatureProjectBlock
-                                        project={project.content}
-                                        isOdd={index % 2 === 0}
-                                        percentage={percentageBg}
-                                    />
-                                </div>
-                            ))}
-                    </div>
-                </div>
+                <ShowcaseSectionDesktop
+                    projectListSectionRef={projectListSectionRef}
+                    xPosition={xPosition}
+                    projectsData={projectsData}
+                    percentageBg={percentageBg}
+                />
                 <AboutMeSection />
             </div>
         </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "framer-motion";
@@ -8,9 +9,7 @@ import { useGlobalStatus } from "../../lib/contexts/GlobalContext";
 export default function FeatureProjectBlock({ project, isOdd, percentage }) {
     const { titleHtml, slug, logo, description, featureImage } = project;
     const { handleIsLandingPage } = useGlobalStatus();
-
-    console.log(`${titleHtml} - isOdd: `, isOdd);
-    console.log(`PERCENTAGE: `, percentage);
+    console.log("Is mobile? :", isMobile);
 
     return (
         <div

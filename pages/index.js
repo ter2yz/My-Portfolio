@@ -121,13 +121,13 @@ export default function Home() {
                 {/* {isLoading && (
                     <div className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"></div>
                 )} */}
-                <div
+                {/* <div
                     className={clsx(
                         "h-screen fixed z-40 inset-0 bg-black-primary transition-all duration-200",
                         isLandingPage && "w-screen opacity-100",
                         !isLandingPage && "w-0 opacity-0"
                     )}
-                ></div>
+                ></div> */}
                 {/* <TransitionCanvas /> */}
                 <HeroSection />
                 <div ref={aboutSectionRef}>

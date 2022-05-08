@@ -128,7 +128,7 @@ export default function Home() {
                         !isLandingPage && "w-0 opacity-0"
                     )}
                 ></div>
-                <TransitionCanvas />
+                {/* <TransitionCanvas /> */}
                 <HeroSection />
                 <div ref={aboutSectionRef}>
                     <AboutMeSection />

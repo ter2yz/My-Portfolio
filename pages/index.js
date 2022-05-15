@@ -6,7 +6,6 @@ import ShowcaseSectionDesktop from "../components/Homepage/ShowcaseSectionDeskto
 import FeatureProjectBlock from "../components/Homepage/FeatureProjectBlock";
 import TransitionCanvas from "../components/TransitionCanvas";
 import { SA_GET_FEATURE_PROJECTS } from "../components/Sanity/Queries";
-import { useGlobalStatus } from "../lib/contexts/GlobalContext";
 import Head from "next/head";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
     const [xPosition, setXPosition] = useState(0);
     const [percentageBg, setPercentageBg] = useState();
     const xValue = useRef(0);
-    const { isLandingPage } = useGlobalStatus();
     const aboutSectionRef = useRef();
     const projectListSectionRef = useRef();
 
@@ -118,17 +116,6 @@ export default function Home() {
                 {xValue.current} / {percentageBg * 100}%
             </div>
             <div className="relative">
-                {/* {isLoading && (
-                    <div className="w-screen h-screen fixed z-40 inset-0 bg-black-primary"></div>
-                )} */}
-                {/* <div
-                    className={clsx(
-                        "h-screen fixed z-40 inset-0 bg-black-primary transition-all duration-200",
-                        isLandingPage && "w-screen opacity-100",
-                        !isLandingPage && "w-0 opacity-0"
-                    )}
-                ></div> */}
-                {/* <TransitionCanvas /> */}
                 <HeroSection />
                 <div ref={aboutSectionRef}>
                     <AboutMeSection />

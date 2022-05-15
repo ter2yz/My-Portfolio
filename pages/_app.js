@@ -3,11 +3,12 @@ import { AnimatePresence } from "framer-motion";
 import { ProvideGlobal } from "../lib/contexts/GlobalContext";
 import { motion } from "framer-motion";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
     return (
         <AnimatePresence initial exitBeforeEnter>
             <ProvideGlobal>
                 <motion.div
+                    key={router.router}
                     initial="pageInitial"
                     animate="pageAnimate"
                     variants={{

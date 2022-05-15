@@ -14,7 +14,7 @@ export default function AboutMe() {
                     className="w-full py-10 lg:py-0 flex flex-col items-center"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.5 }}
+                    transition={{ delay: 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
                 >
                     <img

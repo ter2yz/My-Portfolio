@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
-import HeroSection from "../components/Homepage/Hero";
 import AboutMeSection from "../components/Homepage/AboutMe";
 import FeatureProjectBlock from "../components/Homepage/FeatureProjectBlock";
 import TransitionCanvas from "../components/TransitionCanvas";
 import { SA_GET_FEATURE_PROJECTS } from "../components/Sanity/Queries";
+
+const HeroSection = dynamic(() => import("../components/Homepage/Hero"), {
+    ssr: false,
+});
 
 export default function Home() {
     const [projectsData, setProjectsData] = useState(null);

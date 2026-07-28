@@ -20,6 +20,19 @@ async function readRawBody(req: NextApiRequest): Promise<string> {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    await handleRequest(req, res);
+  } catch (err) {
+    console.error("Unhandled error in receive-inbound-email:", err);
+    res.status(500).json({
+      error: "debug",
+      message: err instanceof Error ? err.message : String(err),
+      stack: err instanceof Error ? err.stack : undefined,
+    });
+  }
+}
+
+async function handleRequest(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" });
     return;

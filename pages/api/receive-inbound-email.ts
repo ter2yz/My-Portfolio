@@ -2,8 +2,15 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const FORWARD_TO = "zhengterry2012@gmail.com";
+const CJX_ADDRESS = "cjx@terryzstudio.com";
+const CJX_FORWARD_TO = "cjxian0304@gmail.com";
+const DEFAULT_FORWARD_TO = "zhengterry2012@gmail.com";
 const FORWARD_FROM = "TerryZ Studio Inbox <thanks@terryzstudio.com>";
+
+function resolveForwardTo(to: string[]): string {
+  const isCjx = to.some((address) => address.toLowerCase() === CJX_ADDRESS);
+  return isCjx ? CJX_FORWARD_TO : DEFAULT_FORWARD_TO;
+}
 
 export const config = {
   api: {
@@ -81,7 +88,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { error: sendError } = await resend.emails.send({
     from: FORWARD_FROM,
-    to: FORWARD_TO,
+    to: resolveForwardTo(email.to),
     replyTo: email.from,
     subject: `[terryzstudio.com] ${email.subject}`,
     html: email.html ?? undefined,
